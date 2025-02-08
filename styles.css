@@ -45,8 +45,8 @@
     border-radius: 0 0 10px 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -56,7 +56,8 @@
 .gift-image {
     width: 100px;
     height: auto;
-    margin-bottom: 10px;
+    display: block;  /* Evita márgenes laterales inesperados */
+    margin: 0 auto 10px; /* Centra horizontalmente y mantiene espacio abajo */
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
