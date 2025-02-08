@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let playButton = document.getElementById("playButton");
     let audio = document.getElementById("music");
 
-    // Función para abrir la carta-regalo
+    // Función para abrir la caja-regalo
     function openGift() {
         if (!giftBox.classList.contains("open")) {
             giftBox.classList.add("open");
@@ -12,19 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para reproducir la música
     function playMusic() {
-        if (audio.paused) { // Verifica si la música ya está reproduciéndose
-            audio.play()
-                .then(() => {
-                    playButton.style.display = "none"; // Oculta el botón si se reproduce correctamente
-                })
-                .catch(error => {
-                    console.log("El navegador bloqueó el audio:", error);
-                    alert("Toca el botón de nuevo para permitir la música 🎶");
-                });
+        audio.muted = false; // Desmutear antes de reproducir
+        if (audio.paused) {
+            audio.play().then(() => {
+                setTimeout(() => playButton.style.display = "none", 500);
+            }).catch(error => {
+                console.log("Error al reproducir:", error);
+                alert("Vuelve a tocar el botón para permitir la música 🎶");
+            });
         }
     }
 
-    // Evento al hacer clic en la carta-regalo (24 de febrero)
+    // Evento al hacer clic en la caja
     giftBox.addEventListener("click", function () {
         openGift();
     });
