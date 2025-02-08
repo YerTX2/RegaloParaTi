@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: pink;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    cursor: pointer;
+}
+
+.envelope {
+    width: 200px;
+    height: 150px;
+    background: red;
+    position: relative;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    animation: bounce 1.5s infinite;
+}
+
+.envelope:hover {
+    transform: scale(1.1);
+}
+
+.top {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.letter {
+    width: 180px;
+    height: 120px;
+    background: white;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.letter p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.letter a {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
