@@ -1,16 +1,18 @@
-/* Estilos de la carta-regalo */
+/* ===== Contenedor principal ===== */
 .gift-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    text-align: center;
 }
 
+/* ===== Caja del regalo ===== */
 .gift-box {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     background: #ff4081;
     border-radius: 10px;
     display: flex;
@@ -20,19 +22,25 @@
     transition: transform 0.5s ease-in-out;
 }
 
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Tapa de la caja ===== */
 .gift-box .lid {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 30px;
+    height: 35px;
     background: #f50057;
     border-radius: 10px 10px 0 0;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 }
 
+/* ===== Parte inferior de la caja ===== */
 .gift-box .box {
     width: 100%;
-    height: 120px;
+    height: 145px;
     background: white;
     border-radius: 0 0 10px 10px;
     display: flex;
@@ -44,7 +52,7 @@
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Imagen dentro de la caja */
+/* ===== Imagen dentro de la caja ===== */
 .gift-image {
     width: 100px;
     height: auto;
@@ -54,16 +62,16 @@
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Estilos del mensaje */
+/* ===== Mensaje dentro de la caja ===== */
 .gift-box .message {
     color: #ff4081;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     font-weight: bold;
     padding: 10px;
 }
 
-/* Estilos del enlace */
+/* ===== Enlace de la sorpresa ===== */
 .gift-link {
     display: block;
     text-align: center;
@@ -77,19 +85,18 @@
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Hover en el enlace */
 .gift-link:hover {
     color: #ff0055;
     text-decoration: underline;
 }
 
-/* Animaciones cuando la caja se abre */
+/* ===== Animaciones al abrir la caja ===== */
 .gift-box.open {
     transform: translateY(-10px);
 }
 
 .gift-box.open .lid {
-    transform: translateY(-50px) rotate(-25deg);
+    transform: translateY(-40px) rotate(-15deg);
 }
 
 .gift-box.open .box {
@@ -97,27 +104,28 @@
     transform: translateY(0);
 }
 
-/* Imagen y enlace aparecen con efecto */
 .gift-box.open .gift-image {
     opacity: 1;
     transform: scale(1);
+    transition-delay: 0.2s;
 }
 
 .gift-box.open .gift-link {
     opacity: 1;
     transform: translateY(0);
+    transition-delay: 0.4s;
 }
 
-/* Botón de música */
+/* ===== Botón de música ===== */
 #playButton {
     background-color: #ff4081;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 30px;
     transition: background 0.3s ease-in-out;
 }
 
