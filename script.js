@@ -13,29 +13,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para reproducir la música
     function playMusic() {
-        audio.muted = false; // Desmutear antes de reproducir
         if (audio.paused) {
             audio.play().then(() => {
-                setTimeout(() => playButton.style.display = "none", 500);
-            }).catch(error => {
-                console.log("Error al reproducir:", error);
-                alert("Vuelve a tocar el botón para permitir la música 🎶");
+                playButton.style.display = "none";
+            }).catch(() => {
+                alert("Toca el botón de nuevo para permitir la música 🎶");
             });
         }
     }
 
-    // Evento al hacer clic en la caja
-    giftBox.addEventListener("click", function () {
-        openGift();
-    });
-
-    // Evento para el botón de música
-    playButton.addEventListener("click", function () {
-        playMusic();
-    });
-
-    // Redireccionar a la página de la pregunta
-    questionButton.addEventListener("click", function () {
+    // Redirigir a la pregunta
+    function goToQuestionPage() {
         window.location.href = "pregunta.html";
-    });
+    }
+
+    // Eventos
+    giftBox.addEventListener("click", openGift);
+    playButton.addEventListener("click", playMusic);
+    questionButton.addEventListener("click", goToQuestionPage);
 });
