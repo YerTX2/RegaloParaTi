@@ -1,10 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: pink;
-    font-family: 'Arial', sans-serif;
     text-align: center;
 }
 
@@ -36,6 +42,12 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cuando el sobre se abre */
+.envelope.open .top {
+    transform: rotateX(180deg);
 }
 
 .letter {
@@ -48,8 +60,14 @@ body {
     padding: 10px;
     border-radius: 5px;
     transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0;
+}
+
+/* Cuando el sobre se abre, la carta sube */
+.envelope.open .letter {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .letter p {
@@ -66,4 +84,26 @@ body {
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
+}
+
+/* Botón para reproducir la música */
+#playButton {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#playButton:hover {
+    background: #f50057;
+    transform: translateX(-50%) scale(1.1);
 }
