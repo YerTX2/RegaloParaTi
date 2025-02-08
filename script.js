@@ -1,17 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let envelope = document.getElementById("envelope");
+    let giftBox = document.getElementById("giftBox");
     let playButton = document.getElementById("playButton");
     let audio = document.getElementById("music");
-    let giftBox = document.getElementById("giftBox");
 
-    // Función para abrir la carta del 14 de febrero
-    function openLetter() {
-        if (!envelope.classList.contains("open")) {
-            envelope.classList.add("open");
-        }
-    }
-
-    // Función para abrir la carta-regalo del 24 de febrero
+    // Función para abrir la carta-regalo
     function openGift() {
         if (!giftBox.classList.contains("open")) {
             giftBox.classList.add("open");
@@ -32,19 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Evento al hacer clic en el sobre (14 de febrero)
-    envelope.addEventListener("click", function () {
-        openLetter();
-        playMusic();
+    // Evento al hacer clic en la carta-regalo (24 de febrero)
+    giftBox.addEventListener("click", function () {
+        openGift();
     });
 
     // Evento para el botón de música
     playButton.addEventListener("click", function () {
         playMusic();
-    });
-
-    // Evento al hacer clic en la carta-regalo (24 de febrero)
-    giftBox.addEventListener("click", function () {
-        openGift();
     });
 });
