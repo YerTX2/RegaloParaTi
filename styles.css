@@ -54,7 +54,7 @@
 
 /* ===== Imagen dentro de la caja ===== */
 .gift-image {
-    width: 1000px;
+    width: 100px;
     height: auto;
     display: block;  /* Evita márgenes laterales inesperados */
     margin: 0 auto 10px; /* Centra horizontalmente y mantiene espacio abajo */
