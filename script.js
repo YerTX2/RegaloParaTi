@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let giftBox = document.getElementById("giftBox");
     let playButton = document.getElementById("playButton");
+    let questionButton = document.getElementById("questionButton");
     let audio = document.getElementById("music");
 
     // Función para abrir la caja-regalo
@@ -31,5 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Evento para el botón de música
     playButton.addEventListener("click", function () {
         playMusic();
+    });
+
+    // Redireccionar a la página de la pregunta
+    questionButton.addEventListener("click", function () {
+        window.location.href = "pregunta.html";
     });
 });
