@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Contenedor principal -->
     <div class="container">
-        <!-- Carta -->
-        <div class="card">
-            <h2>💌 Una Carta Especial 💌</h2>
+        <!-- Carta cerrada -->
+        <div class="letter-container" id="letterContainer">
+            <div class="envelope" id="envelope">
+                <div class="flap"></div>
+                <div class="body"></div>
+                <div class="text">💌 Haz clic para abrir</div>
+            </div>
+        </div>
+
+        <!-- Contenido de la carta (oculto al inicio) -->
+        <div class="letter-content" id="letterContent">
+            <h2>💖 Una Carta Especial 💖</h2>
             <p>Hola mi amor, quiero decirte que eres lo mejor que me ha pasado. 
                 Espero que este detalle te saque una sonrisa y recuerdes lo especial que eres para mí. 
-                Gracias por cada momento hermoso que compartimos. (creado por dv.yer)💖</p>
+                Gracias por cada momento hermoso que compartimos. 💖</p>
         </div>
-       
 
         <!-- Caja-Regalo -->
         <div class="gift-container">
@@ -30,14 +37,13 @@
             </div>
         </div>
 
-        <!-- Botones -->
+        <!-- Botones (Deshabilitados al inicio) -->
         <div class="buttons">
-            <button id="playButton">🎵 Reproducir música</button>
-            <button id="questionButton"> ¿Te puedo hacer una pregunta? </button>
+            <button id="playButton" disabled class="disabled">🎵 Reproducir música (Primero abre la carta)</button>
+            <button id="questionButton" disabled class="disabled">❓ Hazme una pregunta (Primero abre la carta)</button>
         </div>
     </div>
 
-    <!-- Música -->
     <audio id="music" loop>
         <source src="audio/MMXX's - Virlan Garcia.mp3" type="audio/mp3">
         Tu navegador no soporta audio.
