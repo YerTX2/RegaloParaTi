@@ -44,6 +44,16 @@
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+/* Imagen dentro de la caja */
+.gift-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
 /* Estilos del mensaje */
 .gift-box .message {
     color: #ff4081;
@@ -53,7 +63,7 @@
     padding: 10px;
 }
 
-/* Estilos del enlace centrado con animación */
+/* Estilos del enlace */
 .gift-link {
     display: block;
     text-align: center;
@@ -67,19 +77,19 @@
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Efecto de hover en el enlace */
+/* Hover en el enlace */
 .gift-link:hover {
     color: #ff0055;
     text-decoration: underline;
 }
 
-/* Animación cuando se abre la caja */
+/* Animaciones cuando la caja se abre */
 .gift-box.open {
     transform: translateY(-10px);
 }
 
 .gift-box.open .lid {
-    transform: translateY(-40px) rotate(-15deg);
+    transform: translateY(-50px) rotate(-25deg);
 }
 
 .gift-box.open .box {
@@ -87,8 +97,30 @@
     transform: translateY(0);
 }
 
-/* Hace que el enlace aparezca suavemente al abrir la caja */
+/* Imagen y enlace aparecen con efecto */
+.gift-box.open .gift-image {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .gift-box.open .gift-link {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Botón de música */
+#playButton {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+#playButton:hover {
+    background-color: #f50057;
 }
