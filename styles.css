@@ -1,3 +1,4 @@
+/* Estilos del botón de música */
 #playButton {
     position: fixed;
     bottom: 20px;
@@ -6,15 +7,87 @@
     background: #ff4081;
     color: white;
     border: none;
-    padding: 15px 25px;
+    padding: 15px 30px;
     font-size: 16px;
+    font-weight: bold;
     border-radius: 30px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-out, transform 0.2s ease-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    outline: none;
+    user-select: none;
 }
 
 #playButton:hover {
     background: #f50057;
     transform: translateX(-50%) scale(1.1);
+}
+
+#playButton:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+/* Estilos de la carta-regalo */
+.gift-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.gift-box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: #ff4081;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gift-box .lid {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background: #f50057;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gift-box .box {
+    width: 100%;
+    height: 120px;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.gift-box .message {
+    color: #ff4081;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.gift-box.open {
+    transform: translateY(-10px);
+}
+
+.gift-box.open .lid {
+    transform: translateY(-40px) rotate(-15deg);
+}
+
+.gift-box.open .box {
+    opacity: 1;
+    transform: translateY(0);
 }
