@@ -3,84 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Una Pregunta Especial 💖</title>
+    <title>Pregunta Importante 💖</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
             font-family: Arial, sans-serif;
-        }
-        .question-container {
             text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 50px;
+            background-color: #ffebf0;
+        }
+        h1 {
+            color: #d63384;
+        }
+        #warningMessage {
+            font-size: 18px;
+            color: red;
+            margin-top: 20px;
         }
         .button-container {
-            margin-top: 20px;
-            position: relative;
+            margin-top: 30px;
         }
         button {
+            font-size: 20px;
             padding: 10px 20px;
-            margin: 0 10px;
-            font-size: 16px;
-            cursor: pointer;
+            margin: 10px;
             border: none;
-            border-radius: 5px;
+            cursor: pointer;
+            border-radius: 10px;
         }
         #yesButton {
-            background-color: #4CAF50;
+            background-color: #28a745;
             color: white;
         }
         #noButton {
-            background-color: #f44336;
+            background-color: #dc3545;
             color: white;
-            position: absolute;
-        }
-        #warningMessage {
-            margin-top: 20px;
-            color: red;
-            display: none;
+            position: relative;
         }
     </style>
 </head>
 <body>
-    <div class="question-container">
-        <h2>¿Quieres ser mi novia? 💖</h2>
-        <div class="button-container">
-            <button id="yesButton">😍 Sí</button>
-            <button id="noButton">😅 No</button>
-        </div>
-        <p id="warningMessage">¡Por favor, elige una opción!</p>
+    <h1>¿Quieres ser mi amor para siempre? 💖</h1>
+    <p id="warningMessage"></p>
+    <div class="button-container">
+        <button id="yesButton">Sí 💕</button>
+        <button id="noButton">No 💔</button>
     </div>
-
-    <script>
-        const noButton = document.getElementById('noButton');
-        const container = document.querySelector('.button-container');
-
-        noButton.addEventListener('mouseover', function() {
-            const containerRect = container.getBoundingClientRect();
-            const buttonRect = noButton.getBoundingClientRect();
-
-            let newLeft = Math.random() * (containerRect.width - buttonRect.width);
-            let newTop = Math.random() * (containerRect.height - buttonRect.height);
-
-            noButton.style.left = `${newLeft}px`;
-            noButton.style.top = `${newTop}px`;
-        });
-
-        document.getElementById('yesButton').addEventListener('click', function() {
-            alert('¡Gracias! 💖');
-        });
-
-        noButton.addEventListener('click', function() {
-            document.getElementById('warningMessage').style.display = 'block';
-        });
-    </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
