@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -42,13 +42,44 @@
     </style>
 </head>
 <body>
-    <h1>¿Quieres ser mi amor para siempre? 💖</h1>
+    <h1>¿Quieres pasar el resto de tu vida conmigo? 💍💕</h1>
     <p id="warningMessage"></p>
     <div class="button-container">
         <button id="yesButton">Sí 💕</button>
-        <button id="noButton">No 💔</button>
+        <button id="noButton" onmouseover="moveNoButton()">No 💔</button>
     </div>
     
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let yesButton = document.getElementById("yesButton");
+            let noButton = document.getElementById("noButton");
+
+            if (yesButton) {
+                yesButton.addEventListener("click", function () {
+                    alert("¡Sabía que dirías que sí! 😍💖");
+                });
+            }
+
+            if (noButton) {
+                noButton.addEventListener("mouseover", moveNoButton);
+            }
+        });
+
+        function moveNoButton() {
+            let noButton = document.getElementById("noButton");
+            if (!noButton) return;
+            
+            let maxX = window.innerWidth - noButton.offsetWidth - 20;
+            let maxY = window.innerHeight - noButton.offsetHeight - 20;
+            
+            let randomX = Math.random() * maxX;
+            let randomY = Math.random() * maxY;
+
+            noButton.style.position = "absolute";
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+    </script>
 </body>
 </html>
+
