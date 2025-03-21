@@ -1,10 +1,51 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Una Pregunta Especial 💖</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .question-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #yesButton {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noButton {
+            background-color: #f44336;
+            color: white;
+        }
+        #warningMessage {
+            margin-top: 20px;
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="question-container">
@@ -13,9 +54,17 @@
             <button id="yesButton">😍 Sí</button>
             <button id="noButton">😅 No</button>
         </div>
-        <p id="warningMessage"></p>
+        <p id="warningMessage">¡Por favor, elige una opción!</p>
     </div>
 
-    <script src="pregunta.js"></script>
+    <script>
+        document.getElementById('yesButton').addEventListener('click', function() {
+            alert('¡Gracias! 💖');
+        });
+
+        document.getElementById('noButton').addEventListener('click', function() {
+            document.getElementById('warningMessage').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
