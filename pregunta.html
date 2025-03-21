@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,7 @@
         }
         .button-container {
             margin-top: 20px;
+            position: relative;
         }
         button {
             padding: 10px 20px;
@@ -39,6 +40,7 @@
         #noButton {
             background-color: #f44336;
             color: white;
+            position: absolute;
         }
         #warningMessage {
             margin-top: 20px;
@@ -58,11 +60,25 @@
     </div>
 
     <script>
+        const noButton = document.getElementById('noButton');
+        const container = document.querySelector('.button-container');
+
+        noButton.addEventListener('mouseover', function() {
+            const containerRect = container.getBoundingClientRect();
+            const buttonRect = noButton.getBoundingClientRect();
+
+            let newLeft = Math.random() * (containerRect.width - buttonRect.width);
+            let newTop = Math.random() * (containerRect.height - buttonRect.height);
+
+            noButton.style.left = `${newLeft}px`;
+            noButton.style.top = `${newTop}px`;
+        });
+
         document.getElementById('yesButton').addEventListener('click', function() {
             alert('¡Gracias! 💖');
         });
 
-        document.getElementById('noButton').addEventListener('click', function() {
+        noButton.addEventListener('click', function() {
             document.getElementById('warningMessage').style.display = 'block';
         });
     </script>
